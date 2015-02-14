@@ -771,7 +771,7 @@ header ul li:hover span#icon-info, header ul li:active span#icon-info, header ul
 }
 /* line 542, ../scss/main.scss */
 #main-container section.slider section.slides h3 {
-  margin-left: 78px;
+  margin-left: 0px; /*was 78*/
 }
 /* line 543, ../scss/main.scss */
 #main-container section.slider section.slides section.box {

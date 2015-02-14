@@ -1,6 +1,6 @@
 <?php
 
-$_CONFIG['semestre'] = 'P14';
+$_CONFIG['semestre'] = 'P15';
 
 $_CONFIG['slim_config'] = array(
     'mode' => 'development',
@@ -53,7 +53,7 @@ $_CONFIG['database'] =  array(
     'persistent' => false,
     'host' => 'localhost',
     'login' => 'root',
-    'password' => 'root',
+    'password' => '',
     'database' => 'picasso',
     'prefix' => '',
     'encoding' => 'utf8',

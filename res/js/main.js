@@ -71,8 +71,7 @@ $(document).ready(function() {
         disablePresentation();
     });
 
-    // Activation du scroll automatique au début.
-    enablePresentation();
+    
 
     $('.slides').each(function(i) {
         var height = $(this).height();

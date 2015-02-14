@@ -1,0 +1,87 @@
+INFO - 2014-10-01T18:09:09+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:09:10+02:00 - Impossible de charger les produits depuis Payutc
+INFO - 2014-10-01T18:09:30+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:09:30+02:00 - Impossible de charger les produits depuis Payutc
+INFO - 2014-10-01T18:11:02+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:11:02+02:00 - Impossible de charger les produits depuis Payutc
+INFO - 2014-10-01T18:11:29+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:11:29+02:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2014-10-01T18:11:40+02:00 - exception 'ErrorException' with message 'Non-static method Picasso\Session::read() should not be called statically' in C:\Users\Jo Colina\Documents\www\picasso\index.php:84
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Slim\Slim::handleErrors(2048, 'Non-static meth...', 'C:\\Users\\Jo Col...', 84, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Picasso\Session::read()
+#2 [internal function]: {closure}(Object(Slim\Route))
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(438): call_user_func_array(Object(Closure), Array)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#10 {main}
+ERROR - 2014-10-01T18:11:53+02:00 - exception 'ErrorException' with message 'Non-static method Picasso\Session::read() should not be called statically' in C:\Users\Jo Colina\Documents\www\picasso\index.php:84
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Slim\Slim::handleErrors(2048, 'Non-static meth...', 'C:\\Users\\Jo Col...', 84, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Picasso\Session::read()
+#2 [internal function]: {closure}(Object(Slim\Route))
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(438): call_user_func_array(Object(Closure), Array)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#10 {main}
+INFO - 2014-10-01T18:11:58+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:11:58+02:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2014-10-01T18:13:08+02:00 - exception 'ErrorException' with message 'Non-static method Picasso\Session::read() should not be called statically' in C:\Users\Jo Colina\Documents\www\picasso\index.php:84
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Slim\Slim::handleErrors(2048, 'Non-static meth...', 'C:\\Users\\Jo Col...', 84, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Picasso\Session::read()
+#2 [internal function]: {closure}(Object(Slim\Route))
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(438): call_user_func_array(Object(Closure), Array)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#10 {main}
+INFO - 2014-10-01T18:13:40+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:13:40+02:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2014-10-01T18:14:04+02:00 - exception 'RuntimeException' with message 'View cannot render `https:assos.utc.fr/picasso/treso/index.php` because the template does not exist' in C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php:272
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('https:assos.utc...', NULL)
+#1 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('https:assos.utc...', NULL)
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('https:assos.utc...')
+#3 C:\Users\Jo Colina\Documents\www\picasso\index.php(473): Slim\Slim->render('https:assos.utc...', Array)
+#4 [internal function]: {closure}()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#12 {main}
+ERROR - 2014-10-01T18:14:44+02:00 - exception 'RuntimeException' with message 'View cannot render `https://assos.utc.fr/picasso/treso/index.php` because the template does not exist' in C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php:272
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('https://assos.u...', NULL)
+#1 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('https://assos.u...', NULL)
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('https://assos.u...')
+#3 C:\Users\Jo Colina\Documents\www\picasso\index.php(473): Slim\Slim->render('https://assos.u...', Array)
+#4 [internal function]: {closure}()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#12 {main}
+INFO - 2014-10-01T18:16:10+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:16:10+02:00 - Impossible de charger les produits depuis Payutc
+INFO - 2014-10-01T18:20:25+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:20:25+02:00 - Impossible de charger les produits depuis Payutc
+INFO - 2014-10-01T18:20:35+02:00 - Calling getCategories function on CATALOG service
+ERROR - 2014-10-01T18:20:35+02:00 - Impossible de charger les produits depuis Payutc

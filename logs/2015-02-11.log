@@ -1,0 +1,106 @@
+INFO - 2015-02-11T15:50:16+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T15:50:16+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T16:06:42+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T16:06:42+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T16:20:14+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T16:20:14+01:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2015-02-11T16:20:14+01:00 - exception 'ErrorException' with message 'Undefined variable: _CONFIG' in C:\Users\Jo Colina\Documents\www\picasso\templates\default.php:195
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\templates\default.php(195): Slim\Slim::handleErrors(8, 'Undefined varia...', 'C:\\Users\\Jo Col...', 195, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\Jo Col...')
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('default.php', NULL)
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('default.php', NULL)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('default.php')
+#5 C:\Users\Jo Colina\Documents\www\picasso\index.php(460): Slim\Slim->render('default.php', Array)
+#6 [internal function]: {closure}()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#13 C:\Users\Jo Colina\Documents\www\picasso\index.php(483): Slim\Slim->run()
+#14 {main}
+INFO - 2015-02-11T16:22:40+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T16:22:40+01:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2015-02-11T16:22:40+01:00 - exception 'ErrorException' with message 'Undefined variable: database' in C:\Users\Jo Colina\Documents\www\picasso\templates\default.php:195
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\templates\default.php(195): Slim\Slim::handleErrors(8, 'Undefined varia...', 'C:\\Users\\Jo Col...', 195, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\Jo Col...')
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('default.php', NULL)
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('default.php', NULL)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('default.php')
+#5 C:\Users\Jo Colina\Documents\www\picasso\index.php(460): Slim\Slim->render('default.php', Array)
+#6 [internal function]: {closure}()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#12 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#13 C:\Users\Jo Colina\Documents\www\picasso\index.php(483): Slim\Slim->run()
+#14 {main}
+INFO - 2015-02-11T16:23:18+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T16:23:18+01:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2015-02-11T16:23:19+01:00 - exception 'ErrorException' with message 'mysqli_query() expects parameter 1 to be mysqli, string given' in C:\Users\Jo Colina\Documents\www\picasso\templates\default.php:197
+Stack trace:
+#0 [internal function]: Slim\Slim::handleErrors(2, 'mysqli_query() ...', 'C:\\Users\\Jo Col...', 197, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\templates\default.php(197): mysqli_query('SELECT * FROM `...', Object(mysqli))
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(278): require('C:\\Users\\Jo Col...')
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('default.php', NULL)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('default.php', NULL)
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('default.php')
+#6 C:\Users\Jo Colina\Documents\www\picasso\index.php(460): Slim\Slim->render('default.php', Array)
+#7 [internal function]: {closure}()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#12 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#13 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#14 C:\Users\Jo Colina\Documents\www\picasso\index.php(483): Slim\Slim->run()
+#15 {main}
+INFO - 2015-02-11T16:23:38+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T16:23:38+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:06:01+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:06:01+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:09:32+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:09:32+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:09:42+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:09:42+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:09:52+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:09:52+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:10:26+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:10:26+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:25:53+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:25:53+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:27:00+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:27:00+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:27:26+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:27:26+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:27:39+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:27:39+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:28:44+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:28:44+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:32:00+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:32:00+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:32:31+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:32:31+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:39:17+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:39:18+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:39:48+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:39:48+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:42:22+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:42:22+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:42:40+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:42:40+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:43:39+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:43:39+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:47:51+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:47:51+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:48:45+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:48:45+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:53:17+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:53:17+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-11T18:54:32+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-11T18:54:32+01:00 - Impossible de charger les produits depuis Payutc

@@ -1,0 +1,42 @@
+INFO - 2015-02-13T13:56:00+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T13:56:00+01:00 - Impossible de charger les produits depuis Payutc
+ERROR - 2015-02-13T13:56:09+01:00 - exception 'ErrorException' with message 'Non-static method Picasso\Session::read() should not be called statically' in C:\Users\Jo Colina\Documents\www\picasso\index.php:84
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Slim\Slim::handleErrors(2048, 'Non-static meth...', 'C:\\Users\\Jo Col...', 84, Array)
+#1 C:\Users\Jo Colina\Documents\www\picasso\index.php(84): Picasso\Session::read()
+#2 [internal function]: {closure}(Object(Slim\Route))
+#3 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(438): call_user_func_array(Object(Closure), Array)
+#4 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#10 {main}
+ERROR - 2015-02-13T13:57:57+01:00 - exception 'RuntimeException' with message 'View cannot render `admin.index` because the template does not exist' in C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php:272
+Stack trace:
+#0 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(255): Slim\View->render('admin.index', NULL)
+#1 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\View.php(243): Slim\View->fetch('admin.index', NULL)
+#2 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(751): Slim\View->display('admin.index')
+#3 C:\Users\Jo Colina\Documents\www\picasso\index.php(473): Slim\Slim->render('admin.index', Array)
+#4 [internal function]: {closure}()
+#5 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Route.php(441): call_user_func_array(Object(Closure), Array)
+#6 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1314): Slim\Route->dispatch()
+#7 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\Flash.php(85): Slim\Slim->call()
+#8 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\MethodOverride.php(92): Slim\Middleware\Flash->call()
+#9 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Middleware\PrettyExceptions.php(67): Slim\Middleware\MethodOverride->call()
+#10 C:\Users\Jo Colina\Documents\www\picasso\vendor\slim\slim\Slim\Slim.php(1261): Slim\Middleware\PrettyExceptions->call()
+#11 C:\Users\Jo Colina\Documents\www\picasso\index.php(488): Slim\Slim->run()
+#12 {main}
+INFO - 2015-02-13T15:53:12+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T15:53:12+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-13T16:56:53+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T16:56:53+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-13T17:12:55+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T17:12:55+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-13T17:13:10+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T17:13:10+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-13T17:20:36+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T17:20:36+01:00 - Impossible de charger les produits depuis Payutc
+INFO - 2015-02-13T17:21:30+01:00 - Calling getCategories function on CATALOG service
+ERROR - 2015-02-13T17:21:30+01:00 - Impossible de charger les produits depuis Payutc

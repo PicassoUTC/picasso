@@ -21,7 +21,7 @@
         <header class="fixed">
             <div class="container-header">
               <div id="main-logo">
-                <a href="http://assos.utc.fr/picasso"><img src="res/img/logo_A14.png" alt="Picasso Logo"></a>
+                <a href="http://assos.utc.fr/picasso"><img src="res/img/logo_P15.png" alt="Picasso Logo"></a>
             </div>
               <ul class="menu-right">
                 <li><a id="menu-info" href="info"><span id="icon-info"></span></a></li>
@@ -190,116 +190,301 @@
 <div class="block"></div>
 </a>
 
-*/  ?>
+*/ 
+include "pages/config.php";
 
-                    <!-- LUNDI -->
+$con = mysqli_connect($database['host'], $database['username'], $database['password'], 'picasso');
+$query = "SELECT * FROM `site_perms` ORDER BY `day`, `time`";
+$query = mysqli_query($con, $query);
+setlocale(LC_TIME, "fr_FR");
+$monthFrench = strftime("%B");
+$res = mysqli_fetch_array($query, MYSQL_ASSOC);
+ 
+ ?>
+
+                     <!-- LUNDI -->
                     <div class="columns">
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="http://assos.utc.fr/event/show/502">
+                      <!-- MATIN -->
+                      <a href="">
                         <div class="block">
-                          <span clas="perm_asso">Pompom Rugby</span>
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-1">
+                            <div class="date"><?php echo "Lundi ".(int)substr($semaine_start, 0, 2)." ".$monthFrench; ?></div>
+                            <div class="perm">10h00 - 11h30</div>
+                            <div class="asso">'Tit Dej</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MIDI -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-2">
+                            <div class="date"><?php echo "Lundi ".(int)substr($semaine_start, 0, 2)." ".$monthFrench; ?></div>
+                            <div class="perm">12h00 - 14h30</div>
+                            <div class="asso">'Tit Dej</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+                      <!-- APREM -->
+                      <a href="#">
+                        <div class="block"></div>
+                      </a>
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- SOIR -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
                           <div class="detail d-left d-4">
-                            <div class="date">Lundi 16 Juin</div>
+                            <div class="date"><?php echo "Lundi ".(int)substr($semaine_start, 0, 2)." ".$monthFrench; ?></div>
                             <div class="perm">18h30 - 22h00</div>
-                            <div class="asso">Pompom - Rugby</div>
-                            <div class="titre">Perm Lundi (Pompom - Rugby)</div>
-                            <div class="corps">Des Pompoms, des Rugbywomen et du fun</div>
+                            <div class="asso">'Tit Dej</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a>  
+                    </div>
+
+
+                    <!-- MARDI -->
+                    <div class="columns">
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MATIN -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-1">
+                            <div class="date"><?php echo "Mardi ".((int)substr($semaine_start, 0, 2)+1)." ".$monthFrench; ?></div>
+                            <div class="perm">10h00 - 11h30</div>
+                            <div class="asso">'Tit Dej</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+
+                       <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MIDI -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-2">
+                            <div class="date"><?php echo "Mardi ".((int)substr($semaine_start, 0, 2)+1)." ".$monthFrench; ?></div>
+                            <div class="perm">12h00 - 14h30</div>
+                            <div class="asso">A Table!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- APREM -->
+                      <a href="#">
+                        <div class="block"></div>
+                      </a>
+
+                       <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- SOIR -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-4">
+                            <div class="date"><?php echo "Mardi ".((int)substr($semaine_start, 0, 2)+1)." ".$monthFrench; ?></div>
+                            <div class="perm">18h30 - 22h00</div>
+                            <div class="asso"></div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
                             <div class="lien">[Clique pour plus d'infos]</div>
                           </div>
                         </div>
                       </a> 
                     </div>
-                    <!-- MARDI -->
-                    <div class="columns">
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                    </div>
+
+
                     <!-- MERCREDI -->
                     <div class="columns">
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="http://assos.utc.fr/event/show/500">
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MATIN -->
+                      <a href="">
                         <div class="block">
-                          <span clas="perm_asso">Club Chine</span>
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-1">
+                            <div class="date"><?php echo "Mercredi ".((int)substr($semaine_start, 0, 2)+2)." ".$monthFrench; ?></div>
+                            <div class="perm">10h00 - 11h30</div>
+                            <div class="asso">'Tit Dej!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MIDI -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
                           <div class="detail d-left d-2">
-                            <div class="date">Mercredi 18 Juin</div>
-                            <div class="perm">12h15 - 14h15</div>
-                            <div class="asso">Club Chine</div>
-                            <div class="titre">Déjeuner chaud! Nouilles à wok!</div>
-                            <div class="corps">Déjeuner chaud! Nouilles à wok!</div>
+                            <div class="date"><?php echo "Mercredi ".((int)substr($semaine_start, 0, 2)+2)." ".$monthFrench; ?></div>
+                            <div class="perm">12h00 - 14h30</div>
+                            <div class="asso">A Table!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
                             <div class="lien">[Clique pour plus d'infos]</div>
                           </div>
                         </div>
                       </a>
-                      <a href="#">
+                      <!-- APREM -->
+                      <a href="#"> 
                         <div class="block"></div>
                       </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- SOIR -->
+                     <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-left d-4">
+                            <div class="date"><?php echo "Mercredi ".((int)substr($semaine_start, 0, 2)+2)." ".$monthFrench; ?></div>
+                            <div class="perm">18h30 - 22h00</div>
+                            <div class="asso"></div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
                     </div>
+
+
                     <!-- JEUDI -->
                     <div class="columns">
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="http://assos.utc.fr/event/show/503">
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MATIN -->
+                      <a href="">
                         <div class="block">
-                          <span clas="perm_asso">Motherfuckers</span>
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-right d-1">
+                            <div class="date"><?php echo "Jeudi ".((int)substr($semaine_start, 0, 2)+3)." ".$monthFrench; ?></div>
+                            <div class="perm">10h00 - 11h30</div>
+                            <div class="asso">Tit Dej!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MIDI -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-right d-2">
+                            <div class="date"><?php echo "Jeudi ".((int)substr($semaine_start, 0, 2)+3)." ".$monthFrench; ?></div>
+                            <div class="perm">12h00 - 14h30</div>
+                            <div class="asso">A Table!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- APREM -->
+                      <a href="#">
+                        <div class="block"></div>
+                      </a>
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- SOIR -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
                           <div class="detail d-right d-4">
-                            <div class="date">Jeudi 19 Juin</div>
+                            <div class="date"><?php echo "Jeudi ".((int)substr($semaine_start, 0, 2)+3)." ".$monthFrench; ?></div>
                             <div class="perm">18h30 - 22h00</div>
-                            <div class="asso">Motherfuckers</div>
-                            <div class="titre">Perm Full Moon Party</div>
-                            <div class="corps">le Pic'Asso ouvre pour une des DERNIÈRES fois ses portes, pour une soirée enflammée sur la plage Thaïlandaise</div>
+                            <div class="asso"></div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
                             <div class="lien">[Clique pour plus d'infos]</div>
                           </div>
                         </div>
                       </a>
                     </div>
+
+
                     <!-- VENDREDI -->
                     <div class="columns">
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MATIN -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-right d-1">
+                            <div class="date"><?php echo "Vendredi ".((int)substr($semaine_start, 0, 2)+4)." ".$monthFrench; ?></div>
+                            <div class="perm">10h00 - 11h30</div>
+                            <div class="asso">Tit Dej</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a> 
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- MIDI -->
+                      <a href="">
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-right d-2">
+                            <div class="date"><?php echo "Vendredi ".((int)substr($semaine_start, 0, 2)+4)." ".$monthFrench; ?></div>
+                            <div class="perm">12h00 - 14h30</div>
+                            <div class="asso">A Table!</div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
+                      </a>
+                      <!-- APREM -->
                       <a href="#">
                         <div class="block"></div>
                       </a>
+
+                      <?php $res = mysqli_fetch_array($query, MYSQL_ASSOC); ?>
+                      <!-- SOIR -->
                       <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
-                      </a>
-                      <a href="#">
-                        <div class="block"></div>
+                        <div class="block">
+                          <span clas="perm_asso"><?php echo $res['title']; ?></span>
+                          <div class="detail d-right d-4">
+                            <div class="date"><?php echo "Vendredi ".((int)substr($semaine_start, 0, 2)+4)." ".$monthFrench; ?></div>
+                            <div class="perm">18h30 - 22h00</div>
+                            <div class="asso"></div>
+                            <div class="titre"><?php echo $res['permgroup']; ?></div>
+                            <div class="corps"><?php echo $res['description']; ?></div>
+                            <div class="lien">[Clique pour plus d'infos]</div>
+                          </div>
+                        </div>
                       </a>
                     </div>
 
-
+                    <?php mysqli_close($con); ?>
 <?php  /*
 list($perm1_start, $perm1_end) = explode(';', $perms[0]);
 list($perm2_start, $perm2_end) = explode(';', $perms[1]);
@@ -369,7 +554,8 @@ for ($i = 0; $i < 5; $i++) {
                   <div class="clear"></div>
                 </section>
               </section>
-
+              <?php
+              /*
               <!-- ########### WEEKBIERE ########## -->
               <section class="slides" id="weekbieres">
                 <h1>Bières de la semaine</h1>
@@ -406,7 +592,7 @@ for ($i = 0; $i < 5; $i++) {
                   <div class="clear"></div>
                 </section>
               </section>
-
+            */?>
               <!-- ########### GOODIES ########## -->
               <section class="slides" id="goodies">
                 <h1>Goodies</h1>
@@ -436,7 +622,7 @@ for ($i = 0; $i < 5; $i++) {
                   <div class="clear"></div>
                 </section>
               </section>
-
+              
               <!-- ########### TARIFS ########## -->
               <section class="slides" id="tarifs">
                 <h1>Tarifs</h1>
@@ -532,11 +718,24 @@ for ($i = 0; $i < 5; $i++) {
         <!--script src="res/js/jquery-1.9.1.min.js"></script-->
         <script src="res/js/jquery.plugin.js"></script>
         <script src="res/js/jquery.easing.js"></script>
+
+
         <script src="res/js/jquery.scrollspy.js"></script>
         <script src="res/js/jquery.countdown.js"></script>
         <script src="res/js/main.js"></script>
         <script src="res/js/countdown.js"></script>
         <script src="res/js/angular.min.js"></script>
         <script src="res/js/payutc.js"></script>
+        <script type="text/javascript">
+        <?php
+        if(isset($_GET['scroll'])){
+          if ($_GET['scroll'] != "false" || $_GET['scroll'] != null){
+            // Activation du scroll automatique au début.
+              
+              echo 'enablePresentation()';
+          }
+        }
+        ?>
+        </script>
     </body>
 </html>

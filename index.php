@@ -33,7 +33,7 @@ $app->configureMode('production', function () use ($app) {
 // Only invoked if mode is "development"
 $app->configureMode('development', function () use ($app) {
     $app->config(array(
-        'log.enable' => false,
+        'log.enable' => true,
         'debug' => true
     ));
 });
@@ -100,103 +100,103 @@ $CASauthenticate = function($url = 'home') {
     };
 };
 
-$app->map('/admin/edit-:action-:id', $isLogged(),  function ($action,$id) use ($app){
-    if($app->request()->isAjax()){
-      $pdo = new DB();
-      if($action == "users"){
-        $res = $pdo->find("select * from $action where login = '$login");
-        $res['action'] = $action;
-        echo json_encode((!empty($res)) ? $res : false);
-      }else{
-        $res = $pdo->find("select * from $action where id = $id");
-        $res['action'] = $action;
-        echo json_encode((!empty($res)) ? $res : false);
-      }
-    }
-})->name('edit')->via('POST','GET')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
+// $app->map('/admin/edit-:action-:id', $isLogged(),  function ($action,$id) use ($app){
+//     if($app->request()->isAjax()){
+//       $pdo = new DB();
+//       if($action == "users"){
+//         $res = $pdo->find("select * from $action where login = '$login");
+//         $res['action'] = $action;
+//         echo json_encode((!empty($res)) ? $res : false);
+//       }else{
+//         $res = $pdo->find("select * from $action where id = $id");
+//         $res['action'] = $action;
+//         echo json_encode((!empty($res)) ? $res : false);
+//       }
+//     }
+// })->name('edit')->via('POST','GET')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
 
-$app->get('/admin/delete-:action-:id', $isLogged(),  function ($action,$id) use ($app){
-    if($app->request()->isAjax()){
-      $pdo = new DB();
-      if($action == "users"){
-        $res = $pdo->delete($action,"login = '$id'");
-        echo json_encode(($res) ? array('id' => $id, 'action' => $action) : false);
-      }else{
-        $res = $pdo->delete($action,"id = $id");
-        echo json_encode(($res) ? array('id' => $id, 'action' => $action) : false);
-      }
-    }
-})->name('delete')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
+// $app->get('/admin/delete-:action-:id', $isLogged(),  function ($action,$id) use ($app){
+//     if($app->request()->isAjax()){
+//       $pdo = new DB();
+//       if($action == "users"){
+//         $res = $pdo->delete($action,"login = '$id'");
+//         echo json_encode(($res) ? array('id' => $id, 'action' => $action) : false);
+//       }else{
+//         $res = $pdo->delete($action,"id = $id");
+//         echo json_encode(($res) ? array('id' => $id, 'action' => $action) : false);
+//       }
+//     }
+// })->name('delete')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
 
-$app->post('/admin/add-:action(-:id)', $isLogged(),  function ($action,$id = null) use ($app){
-    if($app->request()->isAjax() && $app->request()->params('data')){
-      $d = $app->request()->params('data');
-      $pdo = new DB();
-      if(isset($d['disabled']))
-        $d['disabled'] = ($d['disabled'] == "on")? "1" : "0";
+// $app->post('/admin/add-:action(-:id)', $isLogged(),  function ($action,$id = null) use ($app){
+//     if($app->request()->isAjax() && $app->request()->params('data')){
+//       $d = $app->request()->params('data');
+//       $pdo = new DB();
+//       if(isset($d['disabled']))
+//         $d['disabled'] = ($d['disabled'] == "on")? "1" : "0";
 
-      if($action == 'bieres' && !isset($d['checkbox']) && isset($d['semaine'])){
-        if($d['semaine'] != "")
-          unset($d['semaine']);
-        unset($d['checkbox']);
-      }
+//       if($action == 'bieres' && !isset($d['checkbox']) && isset($d['semaine'])){
+//         if($d['semaine'] != "")
+//           unset($d['semaine']);
+//         unset($d['checkbox']);
+//       }
 
-      if(!empty($_FILES)){
-        $files = sanitize($_FILES);
-        $uploadfile = "uploads/".basename($files['img_url']['name']);
-        if (move_uploaded_file($files['img_url']['tmp_name'], __DIR__."/".$uploadfile)) {
-          $d['img_url'] = $uploadfile;
-          $app->flash('success', "Image uploadée avec succès.");
-        }else{
-          $app->flash('error', "L'image n'a pas été uploadée.");
-        }
-      }
+//       if(!empty($_FILES)){
+//         $files = sanitize($_FILES);
+//         $uploadfile = "uploads/".basename($files['img_url']['name']);
+//         if (move_uploaded_file($files['img_url']['tmp_name'], __DIR__."/".$uploadfile)) {
+//           $d['img_url'] = $uploadfile;
+//           $app->flash('success', "Image uploadée avec succès.");
+//         }else{
+//           $app->flash('error', "L'image n'a pas été uploadée.");
+//         }
+//       }
 
-      if($id){
-        if($action == "users"){
-          $pdo->update($action,$d,"login = ${d['login']}");
-        }else{
-          $pdo->update($action,$d,"id = ${d['id']}");
-        }
-        $d['isUpdate'] = true;
-        echo json_encode($d);
-      }else{
-        if($action == "site_users"){
-          $pdo->save($action,$d,false);
-        }else{
-          $pdo->save($action,$d);
-          $d['id'] = $pdo->lastId();
-        }
-        echo json_encode($d);
-      }
-    }
-})->name('add')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
+//       if($id){
+//         if($action == "users"){
+//           $pdo->update($action,$d,"login = ${d['login']}");
+//         }else{
+//           $pdo->update($action,$d,"id = ${d['id']}");
+//         }
+//         $d['isUpdate'] = true;
+//         echo json_encode($d);
+//       }else{
+//         if($action == "site_users"){
+//           $pdo->save($action,$d,false);
+//         }else{
+//           $pdo->save($action,$d);
+//           $d['id'] = $pdo->lastId();
+//         }
+//         echo json_encode($d);
+//       }
+//     }
+// })->name('add')->conditions(array('action' => '(goodies|bieres|snacks|softs|users)'));
 
-$app->get('/admin', $CASauthenticate('admin'),  function () use ($app){
+// $app->get('/admin', $CASauthenticate('admin'),  function () use ($app){
 
-    $pdo = new DB();
-    $day = date('w');
-    $semaine = date('W');
-    $week_start = date('Y-m-d', strtotime('-'.$day.' days'));
-    $week_end = date('Y-m-d', strtotime('+'.(6-$day).' days'));
-    $datas = array();
-    try{
-      $datas['goodies'] = $pdo->find("select * from site_goodies order by semaine DESC, numero, nom, prenom;");
-      $datas['bieres'] = $pdo->find("select * from site_bieres order by semaine DESC, category, nom, prix;");
-      $datas['softs'] = $pdo->find("select * from site_softs order by nom, prix;");
-      $datas['snacks'] = $pdo->find("select * from site_snacks order by nom, prix;");
-      $datas['users'] = $pdo->find("select * from site_users order by login;");
-    }catch(PDOException $e){
-      $app->flashNow('error','Une erreur est survenue lors des requêtes à la BDD!');
-    }
-    $app->render('admin.php',array(
-        'server'  => $app->request()->getRootUri(),
-        'week_start' => $week_start,
-        'week_end' => $week_end,
-        'semaine' => $semaine,
-        'datas'   => $datas
-    ));
-})->name('admin');
+//     $pdo = new DB();
+//     $day = date('w');
+//     $semaine = date('W');
+//     $week_start = date('Y-m-d', strtotime('-'.$day.' days'));
+//     $week_end = date('Y-m-d', strtotime('+'.(6-$day).' days'));
+//     $datas = array();
+//     try{
+//       $datas['goodies'] = $pdo->find("select * from site_goodies order by semaine DESC, numero, nom, prenom;");
+//       $datas['bieres'] = $pdo->find("select * from site_bieres order by semaine DESC, category, nom, prix;");
+//       $datas['softs'] = $pdo->find("select * from site_softs order by nom, prix;");
+//       $datas['snacks'] = $pdo->find("select * from site_snacks order by nom, prix;");
+//       $datas['users'] = $pdo->find("select * from site_users order by login;");
+//     }catch(PDOException $e){
+//       $app->flashNow('error','Une erreur est survenue lors des requêtes à la BDD!');
+//     }
+//     $app->render('admin.php',array(
+//         'server'  => $app->request()->getRootUri(),
+//         'week_start' => $week_start,
+//         'week_end' => $week_end,
+//         'semaine' => $semaine,
+//         'datas'   => $datas
+//     ));
+// })->name('admin');
 
 // --- CAS
 $app->get('/login', function() use ($app) {
@@ -463,13 +463,13 @@ $app->get('/', function () use ($app){
 
 $app->get('/info', function () use ($app){
     $app->render('info.php',array(
-        'server'   => $app->request()->getRootUri()
+        'server'  => $app->request()->getRootUri()
   ));
 });
 
-$app->get('/treso', function () use ($app){
-    $app->render('https:assos.utc.fr/picasso/treso/index.php',array(
-        'server'   => $app->request()->getRootUri()
+$app->get('/admin', function () use ($app){
+    $app->render('admin.html',array(
+        'server'  => $app->request()->getRootUri()
   ));
 });
 
