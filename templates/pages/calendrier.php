@@ -9,7 +9,7 @@ include "php/services.php";
 
 session_start();
 if(!isset($_SESSION['login'])){
-    header("Location: https://cas.utc.fr/cas/login?service=http://".$_SERVER['HTTP_HOST']."/picassoAdmin/pages/index.php");
+    header("Location: https://cas.utc.fr/cas/login?service=https://".$_SERVER['HTTP_HOST']."/picassoAdmin/pages/index.php");
 }
 
 if(isset($_POST['title'])){
@@ -309,7 +309,7 @@ if(isset($_POST['title'])){
                             <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Stock<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Bière</a>
+                                    <a href="stockBiere.php">Bière</a>
                                 </li>
                                 <li>
                                     <a href="#">Softs</a>

@@ -26,7 +26,10 @@ body {
         border-left: 1px solid #e7e7e7;
     }
 }
-
+.bold{
+    font-weight: bold;
+    
+}
 .navbar-top-links {
     margin-right: 0;
 }

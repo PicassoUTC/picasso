@@ -319,7 +319,7 @@ if(isset($_POST['destroyLogin'])){
                             <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Stock<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="stockBiere.php">Bière</a>
+                                    <a href="#">Bière</a>
                                 </li>
                                 <li>
                                     <a href="#">Softs</a>
@@ -357,53 +357,46 @@ if(isset($_POST['destroyLogin'])){
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Ajouter un Admin</h1>
+                    <h1 class="page-header">Stock des bières</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-lock fa-fw"></i>
+                            <i class="fa fa-truck fa-fw"></i> Stocks
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <form method="POST" action="adminAdd.php">
-                                <div class="col-lg-4">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <input type="text" maxlength="8" name="loginAdd" placeholder="Login" class="form-control"/>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="panel panel-red">
+                                        <div class="panel-heading">
+                                            <i class="fa fa-warning"></i> Danger
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <button type="submit" class="btn btn-info btn-circle btn-lg"><i class="fa fa-check"></i></button>
+                                        <div class="panel-body">
+                                            <div class="row" id="dangerStock">
+                                            </div>
                                         </div>
                                     </div>
-                            </form>
                                 </div>
-                                <div class="col-lg-4">
-                                    <form method="POST" action="adminAdd.php">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-sm-6">
-                                        <select name="destroyLogin" class="form-control">
-                                            <?php
-                                                $con = mysqli_connect($database['host'], $database['username'], $database['password'], 'picasso');
-                                                $query ='SELECT * FROM `site_users`';
-        
-                                                $query = mysqli_query($con, $query);
-                                                while($res = mysqli_fetch_array($query, MYSQL_ASSOC)){
-                                                    echo "<option value=".$res['login'].">".$res['login']."</option>\n";
-                                                }
-                                                mysqli_close($con);
-                                            ?>
-                                        </select>
-                                    </div>
-                                        <button type="submit" class="btn btn-danger btn-circle btn-lg"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </form>
-                                </div>
+                            </div>
                         
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            <i class="fa fa-truck"></i> Stocks
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row" id="normalStock">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -435,6 +428,7 @@ if(isset($_POST['destroyLogin'])){
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <script type="text/javascript" src="js/payUTC.js"></script>
 
 </body>
 

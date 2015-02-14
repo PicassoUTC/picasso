@@ -19,9 +19,9 @@ if (!isset($_GET['ticket'])){
 if (!isset($_SESSION['login'])){
     if(!isset($_GET['ticket'])){
         echo "POULET";
-        header("Location: https://cas.utc.fr/cas/login?service=http://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php");
+        header("Location: https://cas.utc.fr/cas/login?service=https://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php");
     }else{
-        $url = "https://cas.utc.fr/cas/serviceValidate?ticket=".$_GET["ticket"]."&service=http://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php";
+        $url = "https://cas.utc.fr/cas/serviceValidate?ticket=".$_GET["ticket"]."&service=https://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php";
         $result = file_get_contents($url);
         $parsed = new xmlToArrayParser($result);
         $loggedUser = $parsed->array['cas:serviceResponse']['cas:authenticationSuccess']['cas:user'];
@@ -42,7 +42,7 @@ if (!isset($_SESSION['login'])){
 
         if(in_array($loggedUser, $logins)){
             $_SESSION['login'] = $loggedUser;
-            header("Location: http://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php");
+            header("Location: https://".$_SERVER['HTTP_HOST']."/picasso/templates/pages/index.php");
         }else{
             header("Location: http://".$_SERVER['HTTP_HOST']."/picasso/403.php");
         }
@@ -342,7 +342,7 @@ if (!isset($_SESSION['login'])){
                             <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Stock<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Bière</a>
+                                    <a href="stockBiere.php">Bière</a>
                                 </li>
                                 <li>
                                     <a href="#">Softs</a>
