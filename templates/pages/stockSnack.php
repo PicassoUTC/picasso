@@ -12,10 +12,20 @@ if(!isset($_SESSION['login'])){
     header("Location: https://cas.utc.fr/cas/login?service=https://".$_SERVER['HTTP_HOST']."/picassoAdmin/pages/index.php");
 }
 
-if(isset($_POST['title'])){
-    if($_POST['title'] != ""){
+if(isset($_POST['loginAdd'])){
+    if($_POST['loginAdd'] != ""){
         $con = mysqli_connect($database['host'], $database['username'], $database['password'], 'picasso');
-        $query ='UPDATE `site_perms` SET title="'.$_POST['title'].'", permgroup="'.$_POST['permgroup'].'", description="'.$_POST['description'].'" WHERE day='.$_POST['day'] .' AND time='.$_POST['time'];
+        $query ='INSERT INTO `site_users` (`login`) VALUES ("'.$_POST['loginAdd'].'")';
+        $query = mysqli_query($con, $query);
+    
+        mysqli_close($con);
+    }
+}
+
+if(isset($_POST['destroyLogin'])){
+    if($_POST['destroyLogin'] != ""){
+        $con = mysqli_connect($database['host'], $database['username'], $database['password'], 'picasso');
+        $query ='DELETE FROM `site_users` WHERE `site_users`.`login`=\''.$_POST['destroyLogin'].'\'';
         
         $query = mysqli_query($con, $query);
     
@@ -347,49 +357,46 @@ if(isset($_POST['title'])){
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Calendrier</h1>
+                    <h1 class="page-header">Stock des Snacks</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="panel panel-default">
+                    <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-calendar fa-fw"></i> Permanences Pic'Asso Semaine du <?php echo date("d/m/y");?>
+                            <i class="fa fa-truck fa-fw"></i> Stocks
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                                <form method="POST" action="calendrier.php">
-                                <div class="col-lg-4">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <select class="form-control col-lg-2 col-md-4" name="day">
-                                                        <option value="1">Lundi</option>
-                                                        <option value="2">Mardi</option>
-                                                        <option value="3">Mercredi</option>
-                                                        <option value="4">Jeudi</option>
-                                                        <option value="5">Vendredi</option>
-                                                    </select>
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="panel panel-red">
+                                        <div class="panel-heading">
+                                            <i class="fa fa-warning"></i> Danger
                                         </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-6">
-                                            <select class="form-control" name="time">
-                                                        <option value="1">Matin</option>
-                                                        <option value="2">Midi</option>
-                                                        <option value="3">Soir</option>
-                                                    </select>
+                                        <div class="panel-body">
+                                            <div class="row" id="dangerStock">
+                                            </div>
                                         </div>
                                     </div>
-                                    <input class="form-control" name="title" placeholder="Titre de la Perm" style="margin-bottom:5px; margin-top:5px;"/>
-                                    <input class="form-control" name="permgroup" placeholder="Groupe qui tient la perm"/>
-                                    
                                 </div>
-                                <div class="col-lg-8">
-                                    <textarea class="form-control" name="description" rows="5" maxlength = "1000" placeholder="Description de la perm" style="margin-bottom:5px;"></textarea>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-lg-12 col-sm-12 col-xs-12">
+                                    <div class="panel panel-green">
+                                        <div class="panel-heading">
+                                            <i class="fa fa-truck"></i> Stocks
+                                        </div>
+                                        <div class="panel-body">
+                                            <div class="row" id="normalStock">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
-                            </form>
+                            </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -421,7 +428,8 @@ if(isset($_POST['title'])){
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-
+    <script type="text/javascript" src="js/payUTC.js"></script>
+    <script type="text/javascript">displaySnacks();</script>
 </body>
 
 </html>

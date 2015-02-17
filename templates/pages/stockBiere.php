@@ -69,7 +69,9 @@ if(isset($_POST['destroyLogin'])){
 </head>
 
 <body>
-
+            <div id="loading-div" style="width:100%; height:100%; top:0px; left:0px; position:fixed; background: #550454; z-index:1500; display:none;">
+                Loading
+            </div>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -319,13 +321,13 @@ if(isset($_POST['destroyLogin'])){
                             <a href="#"><i class="fa fa-bar-chart fa-fw"></i> Stock<span class="fa arrow"></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#">Bière</a>
+                                    <a href="stockBiere.php">Bière</a>
                                 </li>
                                 <li>
-                                    <a href="#">Softs</a>
+                                    <a href="stockSoft.php">Softs</a>
                                 </li>
                                 <li>
-                                    <a href="#">Snack</a>
+                                    <a href="stockSnack.php">Snack</a>
                                 </li>
                             </ul>
                         </li>
@@ -355,6 +357,7 @@ if(isset($_POST['destroyLogin'])){
         </nav>
 
         <div id="page-wrapper">
+
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Stock des bières</h1>
@@ -370,7 +373,7 @@ if(isset($_POST['destroyLogin'])){
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="row">
+                            <div class="row" id="dangerRow">
                                 <div class="col-lg-12 col-sm-12 col-xs-12">
                                     <div class="panel panel-red">
                                         <div class="panel-heading">
@@ -429,6 +432,7 @@ if(isset($_POST['destroyLogin'])){
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script type="text/javascript" src="js/payUTC.js"></script>
+    <script type="text/javascript">displayBeers();</script>
 
 </body>
 

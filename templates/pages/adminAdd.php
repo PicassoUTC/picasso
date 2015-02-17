@@ -322,10 +322,10 @@ if(isset($_POST['destroyLogin'])){
                                     <a href="stockBiere.php">Bière</a>
                                 </li>
                                 <li>
-                                    <a href="#">Softs</a>
+                                    <a href="stockSoft.php">Softs</a>
                                 </li>
                                 <li>
-                                    <a href="#">Snack</a>
+                                    <a href="stockSnack.php">Snack</a>
                                 </li>
                             </ul>
                         </li>
